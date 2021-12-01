@@ -108,16 +108,18 @@ describe('Calculator', () => {
     const button2 = container.find('#number2');
     const button5 = container.find('#number5');
     const buttonMultiply = container.find('#operator-multiply')
+    const buttonAdd = container.find('#operator_add');
     const runningTotal = container.find('#running-total');
     const buttonClear = container.find('#clear');
+    const buttonEquals = container.find('#operator-equals')
     button2.simulate('click');
     buttonMultiply.simulate('click');
     button5.simulate('click');
-    buttonClear.simulate('click')
-    expect(runningTotal.text()).toEqual('0');
+    buttonAdd.simulate('click');
+    button5.simulate('click');
+    buttonClear.simulate('click');
+    buttonEquals.simulate('click')
+    expect(runningTotal.text()).toEqual('10');
   });
-
-
-
 })
 
