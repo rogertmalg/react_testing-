@@ -39,7 +39,5 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '0');
   });
-  // Can multiple operations be chained together?
-  // Is the output as expected for a range of numbers (for example, positive, negative, decimals and very large numbers)?
-
+  
 })
