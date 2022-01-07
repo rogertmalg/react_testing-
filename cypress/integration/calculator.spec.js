@@ -32,18 +32,28 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '11');
   });
 
-  it('should have the correct output for a range of numbers', () => {
+  it('should have the correct output for a negative number', () => {
     cy.get('#number5').click();
     cy.get('#operator-subtract').click();
     cy.get('#number1').click();
     cy.get('#number0').click();
     cy.get('#operator-equals').click();
-    cy.get('#operator-divide').click();
-    cy.get('#number0').click();
-    cy.get('#decimal').click();
-    cy.get('#number5').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number2').click();
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '-10');
+  });
+
+  it('should have the correct output for a decimal number', () => {
+    cy.get('#number7').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number1').click();
+    cy.get('#number0').click();
+    cy.get('#operator-equals').click();
+    cy.get('#operator-multiply').click();
+    cy.get('#number2').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '1.4');
   });
 
   it('should display 0 after dividing a number by 0', () => {
